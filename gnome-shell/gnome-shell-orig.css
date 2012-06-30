@@ -21,7 +21,7 @@
  * Modified from Zukitwo Gnome-shell theme by lassekongo83 */
 
 stage {
-	font-family: Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .shell-link {
@@ -304,11 +304,11 @@ StTooltip StLabel {
 }
 
 .applications-title {
-	font-family: Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .favorites-title {
-	font-family: Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .window-list-box {

@@ -21,7 +21,7 @@
  * Modified from Zukitwo Gnome-shell theme by lassekongo83 */
 
 stage {
-	font-family: "Droid Sans", Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", "Droid Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .shell-link {
@@ -304,11 +304,11 @@ StTooltip StLabel {
 }
 
 .applications-title {
-	font-family: "Droid Sans", Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", "Droid Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .favorites-title {
-	font-family: "Droid Sans", Ubuntu, cantarell, sans-serif;
+	font-family: "Open Sans", "Droid Sans", Ubuntu, cantarell, sans-serif;
 }
 
 .window-list-box {
@@ -830,17 +830,17 @@ StTooltip StLabel {
 /* Apps */
 
 .icon-grid {
-	spacing: 36px;
-	-shell-grid-item-size: 118px; /* was 118px */
+	spacing: 18px; /* was 36px */
+	-shell-grid-item-size: 96px; /* was 118px */
 }
 
 .contact-grid {
-	spacing: 36px;
-	-shell-grid-item-size: 272px; /* 2 * -shell-grid-item-size + spacing */
+	spacing: 18px; /* was 36px */
+	-shell-grid-item-size: 210px; /* 2 * -shell-grid-item-size + spacing */ /* was 272px */
 }
 
 .icon-grid .overview-icon {
-	icon-size: 96px;
+	icon-size: 64px; /* was 96px */
 }
 
 .all-app {

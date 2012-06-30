@@ -48,14 +48,6 @@
 @define-color toolbar_gradient_base #dcdcdc;
 @define-color toolbar_gradient_final #d1d1d1;
 @define-color toolbar_border #ccc;
-@define-color menubar_color @dark_bg_color;
-
-/* Window Manager colors */
-@define-color wm_highlight shade (@menubar_color, 1.8);
-@define-color wm_title_highlight #111111;
-
-@define-color wm_bg_a shade (@menubar_color, 1.7);
-@define-color wm_bg_b @menubar_color;
 
 @import url("gtk-widgets.css");
 @import url("apps/gnome-panel.css");

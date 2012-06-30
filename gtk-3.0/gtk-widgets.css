@@ -67,17 +67,6 @@
 /**********
  * states *
  **********/
-GtkWindow,
-GtkToolbar,
-GtkPaned {
-	background-color: @theme_bg_color;
-	color: @theme_text_color;
-}
-
-.view {
-	background-color: @theme_base_color;
-}
-
 *:insensitive {
 	color: shade (@theme_bg_color, 0.6);
 	text-shadow: 0 1 alpha (shade (@theme_bg_color, 1.25), 0.5);
@@ -903,44 +892,15 @@ GtkIconView.view.cell:selected:focused {
 	background-color: @theme_selected_bg_color;
 }
 
-.menu.button:active,
-.menu.button {
-	background-image: none;
-	background-color: @menubar_color;
-	border-radius: 0;
-	border-style: none;
-	border-width: 1;
-	color: @dark_fg_color;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-}
-
 .menu.button:hover,
-.menu.button:active:hover {
-	background-image: none;
-	background-color: shade (@menubar_color, 1.18);
-	border-radius: 0;
-	border-style: none;
-	border-width: 1;
-	color: @theme_selected_fg_color;
-
-	-unico-border-gradient: none;
-	-unico-glow-radius: 0;
-	-unico-inner-stroke-width: 0;
-	-unico-outer-stroke-width: 0;
-}
-
+.menu.button:active,
 .menu.button:active:insensitive,
-.menu.button:insensitive {
-	background-image: none;
-	background-color: @menubar_color;
+.menu.button:insensitive,
+.menu.button {
+	background-color: shade (@bg_color, 1.08);
 	border-radius: 0;
 	border-style: none;
 	border-width: 1;
-	color: shade (@dark_fg_color, 0.75);
 
 	-unico-border-gradient: none;
 	-unico-glow-radius: 0;
@@ -953,13 +913,14 @@ GtkIconView.view.cell:selected:focused {
  ***********/
 .menubar {
 	-GtkWidget-window-dragging: true;
-	color: @dark_fg_color;
-	text-shadow: none;
+	color: @fg_color;
+	text-shadow: 0 1 alpha (shade (@button_bg_color, 1.25), 0.4);
 	background-image: -gtk-gradient (linear,left top,left bottom,
-		from (@menubar_color),
-		to (@menubar_color));
-	border-width: 0;
-	border-style: none;
+		from (@toolbar_gradient_base),
+		to (@toolbar_gradient_final));
+	border-width: 0 0 1 0;
+	border-color: @toolbar_border;
+	border-style: solid;
 }
 
 /***************
@@ -969,7 +930,7 @@ GtkIconView.view.cell:selected:focused {
 .menubar .menuitem {
 	border-radius: 0;
 	border-width: 1;
-	color: @dark_fg_color;
+	color: @fg_color;
 }
 
 .menubar.menuitem:hover,
@@ -977,19 +938,13 @@ GtkIconView.view.cell:selected:focused {
 	color: @theme_selected_fg_color;
 	text-shadow: none;
 	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_selected_bg_color, 1.0)),
-		to (shade (@theme_selected_bg_color, 0.85)));
+		from (shade (@bg_color, 1.0)),
+		to (shade (@bg_color, 0.85)));
 	border-width: 1;
 	border-style: solid;
 	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_selected_bg_color, 1.0)),
 		to (shade (@theme_selected_bg_color, 0.85)));
-}
-
-.menubar.menuitem:insensitive,
-.menubar .menuitem *:insensitive {
-	color: shade (@dark_fg_color, 0.75);
-	text-shadow: none;
 }
 
 /************
@@ -998,10 +953,10 @@ GtkIconView.view.cell:selected:focused {
 .menuitem {
 	padding: 3;
 	border-radius: 0;
-	text-shadow: none;
+	text-shadow: 0 1 alpha (shade (@button_bg_color, 1.25), 0.4);
 	border-style: solid;
 	border-width: 0;
-	color: @dark_fg_color;
+	color: @fg_color;
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_selected_bg_color, 1.0)),
 		to (shade (@theme_selected_bg_color, 0.85)));
@@ -1015,21 +970,21 @@ GtkIconView.view.cell:selected:focused {
 		to (shade (@theme_selected_bg_color, 0.85)));
 	color: @theme_selected_fg_color;
 	text-shadow: none;
-	-unico-bullet-color: @theme_selected_fg_color;
+	-unico-bullet-color: @dark_fg_color;
 	border-style: solid;
 	border-width: 0;
 }
 
 .menuitem:insensitive,
 .menuitem *:insensitive {
-	color: shade (@dark_fg_color, 0.75);
-	text-shadow: none;
+	color: mix (@fg_color, @bg_color, 0.5);
+	text-shadow: 0 1 shade (@bg_color, 1.1);
 }
 
 .menuitem.check:active,
 .menuitem.radio:active {
-	color: @dark_fg_color;
-	-unico-bullet-color: @dark_fg_color;
+	color: @fg_color;
+	-unico-bullet-color: @fg_color;
 }
 
 .menuitem.check:active:hover,
@@ -1081,7 +1036,7 @@ GtkIconView.view.cell:selected:focused {
 }
 
 .menuitem .accelerator {
-	color: alpha (@theme_selected_fg_color, 0.6);
+	color: alpha (@fg_color, 0.5);
 }
 
 .menuitem .accelerator:hover {
@@ -1089,8 +1044,8 @@ GtkIconView.view.cell:selected:focused {
 }
 
 .menuitem .accelerator:insensitive {
-	color: alpha (@theme_selected_fg_color, 0.4);
-	text-shadow: none;
+	color: alpha (mix (@fg_color, @bg_color, 0.5), 0.5);
+	text-shadow: 0 -1 shade (@bg_color, 0.7);
 }
 
 /************
@@ -1172,7 +1127,6 @@ GtkProgressBar {
 		to (shade (@theme_selected_bg_color, 1.1)));
 	border-width: 1;
 	border-color: shade (@theme_selected_bg_color, 0.8);
-	color: @theme_selected_fg_color;
 
 	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_selected_bg_color, 0.8)),
@@ -1195,7 +1149,6 @@ GtkProgressBar {
 		to (shade (@theme_selected_bg_color, 1.1)));
 	border-width: 1;
 	border-color: shade (@theme_selected_bg_color, 0.8);
-	color: @theme_selected_fg_color;
 
 	-unico-border-gradient: -gtk-gradient (linear, left top, right top,
 		from (shade (@theme_selected_bg_color, 0.8)),
@@ -1944,9 +1897,7 @@ GtkSwitch.slider:insensitive {
  * tooltip *
  ***********/
 .tooltip {
-	background-color: @theme_tooltip_bg_color;
-	color: @theme_tooltip_fg_color;
-	border-color: shade (@theme_tooltip_bg_color, 0.7);
+	border-color: shade (@tooltip_bg_color, 0.7);
 }
 
 /************
