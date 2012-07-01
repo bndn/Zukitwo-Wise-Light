@@ -10,6 +10,7 @@ A fork of the Zukitwo-Colors (Wise) GNOME Shell theme
 - The title bar and the menu bar are light, not dark
 - The font “Open Sans” replace “Droid Sans”
 - The menu button background is transparent, not green
+- The notification bar is aligned to the left of the screen with the Left/Middle-message-tray extension
 
 ## Installation
 
