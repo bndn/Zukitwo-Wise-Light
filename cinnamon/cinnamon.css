@@ -1,3 +1,5 @@
+/* Zukitwo-Colors Cinnamon theme by http://karashata.deviantart.com */
+
 /* ###################################################################
  * Section common with Gnome Shell
  * ... contains a few cinnamon specific styles (rare occurences) 
@@ -9,7 +11,7 @@ stage {
 }
 
 /* small fonts */
-.app-well-menu, .contact-details-status, .run-dialog-label, .run-dialog-error-label {
+.run-dialog-label, .run-dialog-error-label {
 	font-size: 8pt;
 }
 
@@ -19,7 +21,7 @@ stage {
 }
 
 /* small bold fonts */
-.dash-label, .window-caption, .switcher-list, .source-title, .app-well-app > .overview-icon, .remove-favorite > .overview-icon, .search-result-content > .overview-icon {
+.window-caption, .switcher-list, StTooltip StLabel {
 	font-size: 8pt;
 	font-weight: bold;
 }
@@ -33,10 +35,6 @@ stage {
 	color: #0000e0;
 }
 
-.label-shadow {
-	color: rgba(0,0,0,0.0);
-}
-
 StScrollBar {
 	padding: 0px;
 }
@@ -45,10 +43,15 @@ StScrollView.vfade {
 	-st-vfade-offset: 68px;
 }
 
+StScrollView.hfade {
+	-st-hfade-offset: 68px;
+}
+
 StScrollView StScrollBar {
 	min-width: 8px;
 	min-height: 20px;
 }
+
 
 StScrollBar StBin#trough {
 	background-gradient-direction: vertical;
@@ -83,17 +86,15 @@ StScrollBar StButton#vhandle:hover {
 }
 
 StTooltip StLabel {
-	border: 1px solid rgba(212,185,67,1.0);
-	border-radius: 4px;
-	padding: 2px 12px;
-	background-gradient-end: rgba(251,234,159,0.9);
-	background-gradient-start: rgba(254,245,198,0.9);
+	padding: 2px 8px;
+	border: 2px solid rgba(255,255,255,0.6);
 	background-gradient-direction: vertical;
-	color: #000000;
-	font-size: 8.5pt;
-	font-weight: normal;
-	text-align: center;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0px;
 }
+
 /* ===================================================================
  * Shared button properties 
  * ===================================================================*/
@@ -337,6 +338,24 @@ StTooltip StLabel {
 	spacing: 2px;
 }
 
+#panelLeft:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,0,0,0.05);
+	background-gradient-end: rgba(255,0,0,0.2);
+}
+
+#panelCenter:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0,255,0,0.05);
+	background-gradient-end: rgba(0,255,0,0.2);
+}
+
+#panelRight:dnd {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0,0,255,0.05);
+	background-gradient-end: rgba(0,0,255,0.2);
+}
+
 #panelLeft:ltr {
 	padding-right: 4px;
 }
@@ -363,7 +382,7 @@ StTooltip StLabel {
 }
 
 .panel-button #appMenuIcon {
-	app-icon-bottom-clip: 0px;
+	app-icon-top-clip: 0px;
 	height: 0px;
 	width: 0px;
 }
@@ -490,7 +509,17 @@ StTooltip StLabel {
 	background-size: 22px;
 	height: 22px;
 	width: 22px;
-	-cinnamon-close-overlap: 20px;
+	-cinnamon-close-overlap: 8px;
+}
+
+.window-caption {
+	background-color: rgba(0,0,0,0.5);
+	border: 1px solid rgba(255,255,255,0.25);
+	border-top-width: 0;
+	border-radius: 0 0 6px 6px;
+	color: #fff;
+	padding: 6px 8px;
+	-cinnamon-caption-spacing: 1px;
 }
 
 .window-close {
@@ -536,6 +565,69 @@ StTooltip StLabel {
 
 #viewSelectorTabBar {
 	padding: 1em;
+}
+
+.view-tab-title {
+	color: rgba(255,255,255,0.7);
+	font-weight: bold;
+	padding: 0px 12px;
+	height: 2.0em;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 0;
+}
+
+.view-tab-title:first-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 3px 0 0 3px;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-right-width: 0;
+}
+
+.view-tab-title:nth-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-right-width: 0;
+	border-left-width: 0;
+}
+
+.view-tab-title:last-child {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.15);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border-radius: 0 3px 3px 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-left-width: 0;
+}
+
+.view-tab-title:hover {
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.2);
+	background-gradient-end: rgba(255,255,255,0.1);
+	color: white;
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.25);
+}
+
+.view-tab-title:selected,
+.view-tab-title:nth-child:selected,
+.view-tab-title:first-child:selected,
+.view-tab-title:last-child:selected {
+	color: white;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(151,191,96,0.9);
+	background-gradient-end: rgba(129,163,82,0.9);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.2);
 }
 
 /* ===================================================================
@@ -837,52 +929,6 @@ StTooltip StLabel {
 	min-height: 159px;
 }
 
-.summary-boxpointer {
-	-arrow-border-radius: 0px;
-	-arrow-background-color: rgba(0,0,0,0.0);
-	-arrow-border-width: 0px;
-	-arrow-border-color: rgba(255,255,255,0.0);
-	-arrow-base: 4px;
-	-arrow-rise: 2px;
-	border: 2px solid rgba(255,255,255,0.6);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(32,32,32,1.0);
-	background-gradient-end: rgba(32,32,32,1.0);
-	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
-	border-radius: 0;
-	color: white;
-}
-
-.summary-boxpointer #notification {
-	border: 0px;
-	border-radius: 0px;
-	background: rgba(32,32,32,1.0) !important;
-	padding-bottom: 12px;
-}
-
-.summary-boxpointer #summary-right-click-menu {
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
-#summary-notification-stack-scrollview {
-	max-height: 18em;
-	padding-top: 6px;
-	padding-bottom: 6px;
-}
-
-#summary-notification-stack-scrollview > .top-shadow, #summary-notification-stack-scrollview > .bottom-shadow {
-	height: 1em;
-}
-
-#summary-notification-stack-scrollview:ltr {
-	padding-right: 8px;
-}
-
-#summary-notification-stack-scrollview:rtl {
-	padding-left: 8px;
-}
-
 #notification-scrollview {
 	max-height: 10em;
 	-st-vfade-offset: 24px;
@@ -968,12 +1014,43 @@ StTooltip StLabel {
 }
 
 .hotplug-notification-item {
-	padding: 2px 10px;
-	border-radius: 18px;
+	border-radius: 2px;
+	border-width: 1px;
+	border-color: rgba(78,78,78,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(58,58,58,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 4px 42px 5px;
+}
+
+.hotplug-notification-item:hover {
+	border-color: rgba(98,98,98,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(68,68,68,1.0);
+	background-gradient-end: rgba(58,58,58,1.0);
+}
+
+.hotplug-notification-item:active,
+.hotplug-notification-item:pressed {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: inset 0px 1px 5px rgba(0,0,0,0.35);
+}
+
+.hotplug-notification-item:active:hover,
+.hotplug-notification-item:pressed:hover {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
 }
 
 .hotplug-notification-item:focus {
-	padding: 1px 71px 1px 11px;
+	padding: 3px 41px 4px;
+	box-shadow: 0px 0px 2px 1px rgba(129,163,82,0.9);
 }
 
 .hotplug-notification-item-icon {
@@ -986,18 +1063,18 @@ StTooltip StLabel {
 }
 
 .hotplug-resident-mount {
-	spacing: 8px;
-	border-radius: 4px;
-
-	color: #ccc;
+	color: white;
+	border: 1px solid rgba(0,0,0,0.0);
 }
 
 .hotplug-resident-mount:hover {
-	background-gradient-direction: horizontal;
-	background-gradient-start: rgba(255,255,255,0.1);
-	background-gradient-end: rgba(255,255,255,0);
-
-	color: #fff;
+	color: white;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,255,255,0.12);
+	background-gradient-end: rgba(255,255,255,0.05);
+	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 3px;
 }
 
 .hotplug-resident-mount-label {
@@ -1011,13 +1088,47 @@ StTooltip StLabel {
 }
 
 .hotplug-resident-eject-icon {
-	icon-size: 16px;
+	icon-size: 20px;
 }
 
 .hotplug-resident-eject-button {
+	border-radius: 2px;
+	border-width: 1px;
+	border-color: rgba(78,78,78,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(58,58,58,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 8px;
+}
+
+.hotplug-resident-eject-button:hover {
+	border-color: rgba(98,98,98,0.9);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(68,68,68,1.0);
+	background-gradient-end: rgba(58,58,58,1.0);
+}
+
+.hotplug-resident-eject-button:active,
+.hotplug-resident-eject-button:pressed {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: inset 0px 1px 5px rgba(0,0,0,0.35);
+}
+
+.hotplug-resident-eject-button:active:hover,
+.hotplug-resident-eject-button:pressed:hover {
+	border-color: rgba(98,98,98,0.4);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(28,28,28,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+}
+
+.hotplug-resident-eject-button:focus {
 	padding: 7px;
-	border-radius: 5px;
-	color: #ccc;
+	box-shadow: 0px 0px 2px 1px rgba(129,163,82,0.9);
 }
 
 .chat-log-message {
@@ -1210,7 +1321,6 @@ StTooltip StLabel {
 
 .modal-dialog-button-box {
 	spacing: 21px;
-	padding-top: 50px;
 }
 
 .modal-dialog-button {
@@ -1629,6 +1739,7 @@ StTooltip StLabel {
 	padding-right: 7px;
 	padding-bottom: 7px;
 	border: 1px solid rgba(0,0,0,0);
+	width: 20em;
 }
 
 .menu-application-button:hover {
@@ -1665,6 +1776,7 @@ StTooltip StLabel {
 	padding-right: 7px;
 	padding-bottom: 7px;
 	border: 1px solid rgba(0,0,0,0);
+	width: 12em;
 }
 
 .menu-category-button-greyed {
@@ -1675,6 +1787,7 @@ StTooltip StLabel {
 	color: #9C9C9C;
 	font-style: italic;
 	border: 1px solid rgba(0,0,0,0);
+	width: 12em;
 }
 
 .menu-category-button-selected {
@@ -1734,33 +1847,19 @@ StTooltip StLabel {
 }
 
 #menu-search-entry {
-	padding: 4px 8px;
-	border-radius: 3px;
-	color: #c0c0c0;
-	border: 1px solid rgba(200,200,200,0.1);
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(0,0,0,0.1);
-	background-gradient-end: rgba(0,0,0,0.1);
-	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+	font-weight: normal;
+	width: 23em;
+	selection-background-color: black;
 	selected-color: white;
-	caret-color: white;
+	border-radius: 2px;
+	padding: 4px;
+	color: white;
+	border: 1px solid rgba(200,200,200,0.12);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(0,0,0,0.3);
+	background-gradient-end: rgba(0,0,0,0.3);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.5);
 	caret-size: 1px;
-	width: 250px;
-}
-
-#menu-search-entry:focus,
-#menu-search-entry:hover {
-	color: white;
-	border: 1px solid rgba(200,200,200,0.3);
-}
-
-#menu-search-entry:hover {
-	transition-duration: 300;
-}
-
-#menu-search-entry:focus {
-	color: white;
-	border: 1px solid rgba(200,200,200,0.3);
 }
 
 .menu-search-entry-icon {
@@ -1820,8 +1919,13 @@ StTooltip StLabel {
 }
 
 .window-list-item-demands-attention {
-	background-gradient-start: rgba(255,52,52,0.5);
-	background-gradient-end: rgba(255,144,144,0.5);
+	border: 1px solid rgba(255,52,52,0.4);
+	border-top: 0px;
+	border-bottom: 0px;
+	color: white;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(255,52,52,0.2);
+	background-gradient-end: rgba(255,52,52,0.3);
 }
 
 /* ===================================================================
@@ -1832,9 +1936,6 @@ StTooltip StLabel {
 }
 
 .sound-button {
-	width: 22px;
-	height: 13px;
-	padding: 7px;
 	border-radius: 2px;
 	border-width: 1px;
 	border-color: rgba(78,78,78,0.9);
@@ -1842,6 +1943,7 @@ StTooltip StLabel {
 	background-gradient-start: rgba(58,58,58,1.0);
 	background-gradient-end: rgba(32,32,32,1.0);
 	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.5);
+	padding: 4px 8px 5px;
 }
 
 .sound-button:hover {
@@ -1869,6 +1971,7 @@ StTooltip StLabel {
 }
 
 .sound-button:focus {
+	padding: 3px 7px 4px;
 	box-shadow: 0px 0px 2px 1px rgba(129,163,82,0.9);
 }
 
@@ -1978,48 +2081,30 @@ StTooltip StLabel {
 }
 
 .panel-launcher-add-dialog-entry {
-	padding: 5px;
-	border-radius: 4px;
-	color: rgb(128, 128, 128);
-	border: 2px solid rgba(245,245,245,0.2);
-	background-gradient-start: rgba(5,5,6,0.1);
-	background-gradient-end: rgba(254,254,254,0.1);
+	font-weight: normal;
+	width: 23em;
+	selection-background-color: black;
+	selected-color: white;
+	border-radius: 2px;
+	padding: 4px;
+	color: white;
+	border: 1px solid rgba(200,200,200,0.12);
 	background-gradient-direction: vertical;
-	selected-color: black;
-	caret-color: rgb(128, 128, 128);
+	background-gradient-start: rgba(0,0,0,0.3);
+	background-gradient-end: rgba(0,0,0,0.3);
+	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.5);
 	caret-size: 1px;
-	width: 250px;
-	transition-duration: 300;
-	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.6);
-}
-
-.panel-launcher-add-dialog-entry:focus,
-.panel-launcher-add-dialog-entry:hover {
-	border: 2px solid rgb(136,138,133);
-	background-gradient-start: rgb(200,200,200);
-	background-gradient-end: white;
-	background-gradient-direction: vertical;
-}
-
-.panel-launcher-add-dialog-entry:hover {
-	transition-duration: 300;
-}
-
-.panel-launcher-add-dialog-entry:focus {
-	color: rgb(64, 64, 64);
-	font-weight: bold;
-	transition-duration: 0;
 }
 
 /* ===================================================================
  * Overview corner
  * ===================================================================*/
 #overview-corner {
-	background-image: url("start1.png");
+	background-image: url("overview1.png");
 }
 
 #overview-corner:hover {
-	background-image: url("start2.png");
+	background-image: url("overview2.png");
 }
 
 /* ===================================================================
@@ -2046,9 +2131,7 @@ StTooltip StLabel {
 	background-gradient-end: rgba(255,255,255,0.2);
 }
 
-.applet-box:active,
-.applet-box:overview,
-.applet-box:focus {
+.applet-box:active {
 	border: 1px solid rgba(255,255,255,0.1);
 	border-top: 0px;
 	border-bottom: 0px;

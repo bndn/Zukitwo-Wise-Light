@@ -37,11 +37,11 @@
 	-GtkSeparatorMenuItem-horizontal-padding: 0;
 	-GtkStatusbar-shadow-type: none;
 	-GtkTextView-error-underline-color: @error_color;
-	-GtkToolButton-icon-spacing: 6;
+	-GtkToolButton-icon-spacing: 4;
 	-GtkToolItemGroup-expander-size: 11;
 	-GtkToolbar-internal-padding: 0;
 	-GtkTreeView-expander-size: 6;
-	-GtkTreeView-vertical-separator: 0;
+	-GtkTreeView-vertical-separator: 1;
 	-GtkWidget-wide-separators: true;
 	-GtkWidget-separator-width: 2px;
 	-GtkWidget-separator-height: 2;
@@ -835,6 +835,18 @@ GtkComboBox.combobox-entry .button:insensitive {
 	border-left-color: shade (@theme_bg_color, 0.76);
 }
 
+GtkComboBox {
+	padding: 1px 1px 0;
+}
+
+GtkComboBox .button {
+	padding: 2px;
+}
+
+GtkComboBox .separator {
+	border-width: 0;
+}
+
 /****************
  * drawing area *
  ****************/
@@ -858,7 +870,7 @@ GtkDrawingArea {
 	border-left-color: shade (@theme_bg_color, 0.76);
 	border-radius: 2px;
 	border-style: solid;
-	padding: 3px 5px 3px 5px;
+	padding: 4px 5px 4px 5px;
 
 	color: @theme_text_color;
 
@@ -1623,8 +1635,7 @@ GtkScale.mark {
 }
 
 /* Sliders and buttons */
-.scrollbar.slider.vertical,
-.scrollbar.button.vertical {
+.scrollbar.slider.vertical {
 	background-image: -gtk-gradient (linear, left top, right top,
 		from (shade (@theme_bg_color, 0.95)),
 		to (shade (@theme_bg_color, 0.8)));
@@ -1633,22 +1644,15 @@ GtkScale.mark {
 	border-width: 1px;
 }
 
-.scrollbar.slider.vertical:prelight {
+.scrollbar.slider.vertical:hover,
+.scrollbar.slider.vertical:hover:active {
 	background-image: -gtk-gradient (linear, left top, right top,
 		from (shade (@theme_bg_color, 0.85)),
 		to (shade (@theme_bg_color, 0.7)));
 	border-color: shade (@theme_bg_color, 0.6);
 }
 
-.scrollbar.slider.vertical:prelight:active {
-	background-image: -gtk-gradient (linear, left top, right top,
-		from (shade (@theme_bg_color, 0.85)),
-		to (shade (@theme_bg_color, 0.7)));
-	border-color: shade (@theme_bg_color, 0.6);
-}
-
-.scrollbar.slider.horizontal,
-.scrollbar.button.horizontal {
+.scrollbar.slider.horizontal {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.95)),
 		to (shade (@theme_bg_color, 0.8)));
@@ -1657,14 +1661,8 @@ GtkScale.mark {
 	border-width: 1px;
 }
 
-.scrollbar.slider.horizontal:prelight {
-	background-image: -gtk-gradient (linear, left top, left bottom,
-		from (shade (@theme_bg_color, 0.85)),
-		to (shade (@theme_bg_color, 0.7)));
-	border-color: shade (@theme_bg_color, 0.6);
-}
-
-.scrollbar.slider.horizontal:prelight:active {
+.scrollbar.slider.horizontal:hover,
+.scrollbar.slider.horizontal:hover:active {
 	background-image: -gtk-gradient (linear, left top, left bottom,
 		from (shade (@theme_bg_color, 0.85)),
 		to (shade (@theme_bg_color, 0.7)));
@@ -1677,6 +1675,27 @@ GtkScale.mark {
 
 .scrollbar.trough:insensitive {
 	background-color: shade (@theme_bg_color, 1.06);
+}
+
+/* Fixes a bug in Opera */
+.scrollbar.button {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (@transparent),
+		to (@transparent));
+	background-color: @transparent;
+	-unico-outer-stroke-width: 0;
+	-unico-outer-stroke-color: @transparent;
+	-unico-inner-stroke-width: 0;
+	-unico-inner-stroke-color: @transparent;
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (@transparent),
+		to (@transparent));
+	-unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (@transparent),
+		to (@transparent));
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (@transparent),
+		to (@transparent));
 }
 
 /* overlay scrollbar */
