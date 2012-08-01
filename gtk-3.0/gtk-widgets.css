@@ -7,10 +7,10 @@
 	-GtkButton-image-spacing: 0;
 	-GtkButton-interior-focus: true;
 	-GtkButton-inner-border: 3;
-	-GtkCheckButton-indicator-size: 16;
+	-GtkButtonBox-child-min-height: 26;
+	-GtkCheckButton-indicator-size: 15;
 	-GtkCheckMenuItem-indicator-size: 14;
-	-GtkEntry-inner-border: 2;
-	-GtkEntry-progress-border: 0;
+	-GtkComboBox-arrow-scaling: 0.75;
 	-GtkExpander-expander-size: 8;
 	-GtkHTML-link-color: @link_color;
 	-GtkIMHtml-hyperlink-color: @link_color;
@@ -1398,6 +1398,10 @@ DbusmenuGtkMenu .menuitem .accelerator:insensitive,
 
 .notebook GtkDrawingArea {
 	background-color: shade (@theme_bg_color, 1.02);
+}
+
+.notebook .button {
+	padding: 3px;
 }
 
 /******************
