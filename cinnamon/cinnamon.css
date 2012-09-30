@@ -6,6 +6,9 @@
  * ###################################################################*/
 stage {
 	font-family: "Open Sans", Ubuntu, Droid Sans, Trebuchet MS, Liberation Sans, sans-serif;
+}
+
+* {
 	font-size: 9pt; /* The default font size. */
 	color: white;
 }
@@ -21,7 +24,7 @@ stage {
 }
 
 /* small bold fonts */
-.window-caption, .switcher-list, StTooltip StLabel {
+.window-caption, .switcher-list, .expo-workspaces-name-entry, #Tooltip {
 	font-size: 8pt;
 	font-weight: bold;
 }
@@ -85,7 +88,7 @@ StScrollBar StButton#vhandle:hover {
 	background-gradient-end: rgba(255,255,255,0.9);
 }
 
-StTooltip StLabel {
+#Tooltip {
 	border-radius: 2px;
 	padding: 4px 12px;
 	background-color: rgba(0,0,0,0.5);
@@ -373,33 +376,6 @@ StTooltip StLabel {
 	padding-right: 4px;
 }
 
-#appMenu {
-	spacing: 4px;
-}
-
-/* used for the app menu header only */
-.label-shadow {
-	color: rgba(0,0,0,0.0);
-}
-
-.panel-button #appMenuIcon {
-	app-icon-bottom-clip: 0px;
-	height: 0px;
-	width: 0px;
-}
-
-.panel-button:active #appMenuIcon,
-.panel-button:checked #appMenuIcon,
-.panel-button:focus #appMenuIcon {
-	app-icon-bottom-clip: 1px;
-	color: white;
-}
-
-.app-menu-icon {
-	width: 0px;
-	height: 0px;
-}
-
 .panel-button {
 	-natural-hpadding: 10px;
 	-minimum-hpadding: 6px;
@@ -521,8 +497,7 @@ StTooltip StLabel {
 .window-caption {
 	background-color: rgba(0,0,0,0.5);
 	border: 1px solid rgba(255,255,255,0.25);
-	border-top-width: 0;
-	border-radius: 0 0 6px 6px;
+	border-radius: 6px;
 	color: #fff;
 	padding: 6px 8px;
 	-cinnamon-caption-spacing: 1px;
@@ -542,98 +517,6 @@ StTooltip StLabel {
 
 .window-close:rtl {
 	-st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-.icon-grid {
-	spacing: 36px;
-	-cinnamon-grid-horizontal-item-size: 70px; /* was 118px */
-	-cinnamon-grid-vertical-item-size: 70px; /* was 118px */
-}
-
-.icon-grid .overview-icon {
-	icon-size: 48px; /* was 96px */
-}
-
-.overview-icon {
-	border-radius: 4px;
-	padding: 3px;
-	border: 1px rgba(0,0,0,0);
-	color: white;
-	text-align: center;
-}
-
-/* ===================================================================
- * ViewSelector 
- * ===================================================================*/
-#viewSelector {
-	spacing: 1em;
-}
-
-#viewSelectorTabBar {
-	padding: 1em;
-}
-
-.view-tab-title {
-	color: rgba(255,255,255,0.7);
-	font-weight: bold;
-	padding: 0px 12px;
-	height: 2.0em;
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.15);
-	background-gradient-end: rgba(255,255,255,0.05);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: 0;
-}
-
-.view-tab-title:first-child {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.15);
-	background-gradient-end: rgba(255,255,255,0.05);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
-	border-radius: 3px 0 0 3px;
-	border: 1px solid rgba(0,0,0,0.15);
-	border-right-width: 0;
-}
-
-.view-tab-title:nth-child {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.15);
-	background-gradient-end: rgba(255,255,255,0.05);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
-	border-radius: 0;
-	border: 1px solid rgba(0,0,0,0.15);
-	border-right-width: 0;
-	border-left-width: 0;
-}
-
-.view-tab-title:last-child {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.15);
-	background-gradient-end: rgba(255,255,255,0.05);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.15);
-	border-radius: 0 3px 3px 0;
-	border: 1px solid rgba(0,0,0,0.15);
-	border-left-width: 0;
-}
-
-.view-tab-title:hover {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(255,255,255,0.2);
-	background-gradient-end: rgba(255,255,255,0.1);
-	color: white;
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.25);
-}
-
-.view-tab-title:selected,
-.view-tab-title:nth-child:selected,
-.view-tab-title:first-child:selected,
-.view-tab-title:last-child:selected {
-	color: white;
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(151,191,96,0.9);
-	background-gradient-end: rgba(129,163,82,0.9);
-	box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.2);
 }
 
 /* ===================================================================
@@ -707,11 +590,11 @@ StTooltip StLabel {
 	border: 1px solid #ffffff;
 }
 
-.lg-dialog .shell-link {
+.lg-dialog .cinnamon-link {
 	color: #999999;
 }
 
-.lg-dialog .shell-link:hover {
+.lg-dialog .cinnamon-link:hover {
 	color: #dddddd;
 }
 
@@ -1083,7 +966,7 @@ StTooltip StLabel {
 	border: 1px solid rgba(200,200,200,0.3);
 
 	caret-color: white;
-	selection-background-color: #808080;
+	selection-background-color: #97bf60;
 }
 
 /* ===================================================================
@@ -1238,7 +1121,7 @@ StTooltip StLabel {
 .run-dialog-entry {
 	font-weight: normal;
 	width: 23em;
-	selection-background-color: black;
+	selection-background-color: #97bf60;
 	selected-color: white;
 	border-radius: 2px;
 	padding: 4px;
@@ -1601,6 +1484,10 @@ StTooltip StLabel {
 }
 
 .menu-application-button:hover {
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
 	color: white;
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(255,255,255,0.12);
@@ -1611,6 +1498,10 @@ StTooltip StLabel {
 }
 
 .menu-application-button-selected {
+	padding-top: 7px;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
 	color: #ffffff;
 	background-gradient-direction: vertical;
 	background-gradient-start: rgba(151,191,96,0.9);
@@ -1707,7 +1598,7 @@ StTooltip StLabel {
 #menu-search-entry {
 	font-weight: normal;
 	width: 23em;
-	selection-background-color: black;
+	selection-background-color: #97bf60;
 	selected-color: white;
 	border-radius: 2px;
 	padding: 4px;
@@ -1865,6 +1756,49 @@ StTooltip StLabel {
 }
 
 /* ===================================================================
+ * Workspace OSD
+ * ===================================================================*/
+
+.workspace-osd {
+	border: 2px solid rgba(255,255,255,0.6);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0;
+	font-size: 16pt;
+	font-weight: bold;
+	color: #fff;
+
+	padding-right: 42px;
+	padding-left: 42px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+.expo-workspaces-name-entry {
+	background-color: rgba(0,0,0,0.5);
+	border: 1px solid rgba(255,255,255,0.25);
+	border-radius: 6px;
+	color: #fff;
+	padding: 6px 8px;
+	spacing: 25px;
+	-cinnamon-caption-spacing: 1px;
+}
+
+/* ===================================================================
+ * Notification Applet
+ * ===================================================================*/
+
+.notification-applet-padding {
+	padding: .5em 1em;
+}
+
+.notification-applet-container {
+	max-height: 100px;
+}
+
+/* ===================================================================
  * Panel Launchers Applet (panelLaunchers.js)
  * ===================================================================*/
 #panel-launchers-box {
@@ -1907,7 +1841,7 @@ StTooltip StLabel {
 .panel-launcher-add-dialog-entry {
 	font-weight: normal;
 	width: 23em;
-	selection-background-color: black;
+	selection-background-color: #97bf60;
 	selected-color: white;
 	border-radius: 2px;
 	padding: 4px;

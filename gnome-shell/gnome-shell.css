@@ -683,6 +683,7 @@ StScrollBar StButton#vhandle:hover {
 	background-gradient-start: rgba(0,0,0,0.1);
 	background-gradient-end: rgba(0,0,0,0.1);
 	box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.4);
+	selection-background-color: #97bf60;
 	selected-color: white;
 	caret-color: white;
 	caret-size: 1px;
@@ -1599,7 +1600,7 @@ StScrollBar StButton#vhandle:hover {
 	border: 1px solid rgba(200,200,200,0.3);
 
 	caret-color: white;
-	selection-background-color: #808080;
+	selection-background-color: #97bf60;
 }
 
 /* The spacing and padding on the summary is tricky; we want to keep
@@ -1795,10 +1796,13 @@ StScrollBar StButton#vhandle:hover {
 }
 
 .workspace-switcher-container {
-	border: 1px solid rgba(0,0,0,0.2);
-	background: rgba(214,214,214,1.0);
-	border-radius: 4px;
-	box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.4);
+	border: 2px solid rgba(255,255,255,0.6);
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(32,32,32,1.0);
+	background-gradient-end: rgba(32,32,32,1.0);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
+	border-radius: 0;
+	color: #fff;
 	padding: 20px;
 }
 
@@ -1883,7 +1887,7 @@ StScrollBar StButton#vhandle:hover {
 .run-dialog-entry {
 	font-weight: normal;
 	width: 23em;
-	selection-background-color: black;
+	selection-background-color: #97bf60;
 	selected-color: white;
 	border-radius: 2px;
 	padding: 4px;
